@@ -15,10 +15,6 @@ router.get("/", async (req, res) => {
       ],
     });
 
-    if (!productData) {
-      res.status(404).json({ message: "No product found with this id!" });
-      return;
-    }
     res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);
@@ -36,6 +32,11 @@ router.get("/:id", async (req, res) => {
         { model: Tag, through: ProductTag, as: "relevant_tags" },
       ],
     });
+
+    if (!productData) {
+      res.status(404).json({ message: "No product found with this id!" });
+      return;
+    }
     res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);
