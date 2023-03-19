@@ -9,6 +9,10 @@ class Product extends Model {}
 // set up fields and rules for Product model
 Product.init(
   {
+    id: {
+      type: DataTypes.STRING,
+      primaryKey: true,
+    },
     // define columns
     product_name: {
       type: DataTypes.STRING,

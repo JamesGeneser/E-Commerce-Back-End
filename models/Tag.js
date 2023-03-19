@@ -6,6 +6,10 @@ class Tag extends Model {}
 
 Tag.init(
   {
+    id: {
+      type: DataTypes.STRING,
+      primaryKey: true,
+    },
     tag_name: {
       type: DataTypes.STRING,
     },
